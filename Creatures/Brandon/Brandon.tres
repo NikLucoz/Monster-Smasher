@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://0me5mui5v2w8"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_8q5go"]
+[ext_resource type="Texture2D" uid="uid://bmyqausf2wj3j" path="res://Creatures/Brandon/Brandon_spritesheet.png" id="2_86t06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvawj"]
+atlas = ExtResource("2_86t06")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u01v"]
+atlas = ExtResource("2_86t06")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7txjq"]
+atlas = ExtResource("2_86t06")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do4hv"]
+atlas = ExtResource("2_86t06")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhv4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvawj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u01v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7txjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do4hv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_8q5go")
+name = "Brandon"
+sprite_frames = SubResource("SpriteFrames_lhv4o")
+health = 130
+damage = 9
+cost = 99
+type = "FIRE"
+preferred_enemy = "EARTH"
+fire_damage_modifier = 0.8
+water_damage_modifier = 0.5
+earth_damage_modifier = 1.4
+grass_damage_modifier = 1.0

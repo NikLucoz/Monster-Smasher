@@ -1,0 +1,229 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqql2pjjo05bw"]
+
+[ext_resource type="Script" path="res://Scripts/MonsterCard.gd" id="1_isd80"]
+[ext_resource type="FontFile" uid="uid://o0hbkp144ux0" path="res://Assets/Fonts/m6x11.ttf" id="1_xn5hs"]
+[ext_resource type="Texture2D" uid="uid://bb2bni1te3gac" path="res://Assets/Icons/Grass.svg" id="2_30omw"]
+[ext_resource type="Texture2D" uid="uid://bfkm1shcw4ldv" path="res://Assets/Icons/heart.svg" id="3_rdgll"]
+[ext_resource type="Texture2D" uid="uid://o1ikv3sigecc" path="res://Assets/Icons/damage.svg" id="4_e3nmb"]
+[ext_resource type="Texture2D" uid="uid://b2i3aaeu6puom" path="res://Assets/Icons/earth.svg" id="5_pqij5"]
+[ext_resource type="Texture2D" uid="uid://spisa31mb1mp" path="res://Assets/Icons/fire.svg" id="6_v0k20"]
+[ext_resource type="Texture2D" uid="uid://bnlgybqter4ae" path="res://Assets/Icons/water.svg" id="7_eln5m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqk4w"]
+resource_local_to_scene = true
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ji4rm"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sm4kt"]
+
+[node name="MonsterCard" type="Control"]
+custom_minimum_size = Vector2(162, 162)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_isd80")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqk4w")
+
+[node name="MonsterSprite" type="Sprite2D" parent="Panel"]
+position = Vector2(79, 65.8571)
+scale = Vector2(5.54167, 5.54167)
+
+[node name="MonsterInfo" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 156.0
+offset_bottom = 156.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ji4rm")
+
+[node name="NameLabel" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 103.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("1_xn5hs")
+text = "Jared"
+vertical_alignment = 1
+
+[node name="MonsterTypeIcon" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = -6.0
+offset_right = 156.0
+offset_bottom = 32.0
+texture = ExtResource("2_30omw")
+expand_mode = 1
+
+[node name="HealthIcon" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 13.0
+offset_right = 26.0
+offset_bottom = 41.0
+texture = ExtResource("3_rdgll")
+expand_mode = 1
+
+[node name="DamageIcon" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 29.0
+offset_right = 26.0
+offset_bottom = 57.0
+texture = ExtResource("4_e3nmb")
+expand_mode = 1
+
+[node name="HealthLabel" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 59.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "200"
+vertical_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 36.0
+offset_right = 59.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "20"
+vertical_alignment = 1
+
+[node name="PreferredTypeLabel" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 126.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "Favored enemy type"
+vertical_alignment = 1
+
+[node name="MonsterPreferredTypeIcon" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 39.0
+offset_right = 157.0
+offset_bottom = 77.0
+texture = ExtResource("5_pqij5")
+expand_mode = 1
+
+[node name="FireModifier" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 76.8571
+offset_right = 67.0
+offset_bottom = 94.8571
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "20"
+vertical_alignment = 1
+
+[node name="GrassModifier" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 30.4286
+offset_top = 102.571
+offset_right = 68.4286
+offset_bottom = 120.571
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "20"
+vertical_alignment = 1
+
+[node name="WaterModifier" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 102.571
+offset_right = 132.0
+offset_bottom = 120.571
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "20"
+vertical_alignment = 1
+
+[node name="EarthModifier" type="Label" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 79.7142
+offset_right = 132.0
+offset_bottom = 97.7142
+theme_override_fonts/font = ExtResource("1_xn5hs")
+theme_override_font_sizes/font_size = 16
+text = "20"
+vertical_alignment = 1
+
+[node name="MonsterPreferredTypeIcon2" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 0.428577
+offset_top = 64.0
+offset_right = 38.4286
+offset_bottom = 102.0
+texture = ExtResource("6_v0k20")
+expand_mode = 1
+
+[node name="MonsterPreferredTypeIcon3" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = -0.285719
+offset_top = 89.7143
+offset_right = 37.7143
+offset_bottom = 127.714
+texture = ExtResource("2_30omw")
+expand_mode = 1
+
+[node name="MonsterPreferredTypeIcon4" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 63.2857
+offset_right = 102.0
+offset_bottom = 101.286
+texture = ExtResource("5_pqij5")
+expand_mode = 1
+
+[node name="MonsterPreferredTypeIcon5" type="TextureRect" parent="Panel/MonsterInfo"]
+layout_mode = 0
+offset_left = 63.2857
+offset_top = 89.7143
+offset_right = 101.286
+offset_bottom = 127.714
+texture = ExtResource("7_eln5m")
+expand_mode = 1
+
+[node name="SelectButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 162.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sm4kt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sm4kt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sm4kt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sm4kt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sm4kt")
+
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

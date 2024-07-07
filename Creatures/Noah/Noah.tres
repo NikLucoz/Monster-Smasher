@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://buhp1jay15712"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_8lvso"]
+[ext_resource type="Texture2D" uid="uid://dfg2qino5ovlb" path="res://Creatures/Noah/Noah_spritesheet.png" id="2_31mla"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1suc"]
+atlas = ExtResource("2_31mla")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knige"]
+atlas = ExtResource("2_31mla")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13q2k"]
+atlas = ExtResource("2_31mla")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7pkc"]
+atlas = ExtResource("2_31mla")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47j78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1suc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knige")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13q2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7pkc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_8lvso")
+name = "Noah"
+sprite_frames = SubResource("SpriteFrames_47j78")
+health = 100
+damage = 14
+cost = 180
+type = "EARTH"
+preferred_enemy = "WATER"
+fire_damage_modifier = 1.1
+water_damage_modifier = 1.4
+earth_damage_modifier = 0.8
+grass_damage_modifier = 1.0

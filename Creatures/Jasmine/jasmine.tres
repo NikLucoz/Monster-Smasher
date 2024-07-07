@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=3 format=3 uid="uid://dc60117alxo50"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_h3ipa"]
+[ext_resource type="SpriteFrames" uid="uid://bvjcgwjfv64ey" path="res://Creatures/Jasmine/jasmine_spriteframes.tres" id="2_q6cms"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_h3ipa")
+name = "Jasmine"
+sprite_frames = ExtResource("2_q6cms")
+health = 80
+damage = 18
+type = "WATER"
+preferred_enemy = "FIRE"
+fire_damage_modifier = 2.2
+water_damage_modifier = 0.23
+earth_damage_modifier = 1.2
+grass_damage_modifier = 1.0

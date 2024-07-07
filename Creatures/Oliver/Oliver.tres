@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://domcs2ui24ldj"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_4wxd7"]
+[ext_resource type="Texture2D" uid="uid://bw2t8malthivo" path="res://Creatures/Oliver/Oliver_spritesheet.png" id="2_615fh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp2vl"]
+atlas = ExtResource("2_615fh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fgr2"]
+atlas = ExtResource("2_615fh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8uvq"]
+atlas = ExtResource("2_615fh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqj4j"]
+atlas = ExtResource("2_615fh")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jw6bd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp2vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fgr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8uvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqj4j")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 9.0
+}]
+
+[resource]
+script = ExtResource("1_4wxd7")
+name = "Oliver"
+sprite_frames = SubResource("SpriteFrames_jw6bd")
+health = 59
+damage = 15
+cost = 250
+type = "EARTH"
+preferred_enemy = "FIRE"
+fire_damage_modifier = 1.3
+water_damage_modifier = 0.9
+earth_damage_modifier = 1.0
+grass_damage_modifier = 1.0

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://bc17utf8cnvjn"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_bmnlo"]
+[ext_resource type="Texture2D" uid="uid://b7rh4qorh0d4l" path="res://Creatures/Todd/Todd_spritesheet.png" id="2_vqe3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6vw8"]
+atlas = ExtResource("2_vqe3p")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhie1"]
+atlas = ExtResource("2_vqe3p")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cets7"]
+atlas = ExtResource("2_vqe3p")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtcl6"]
+atlas = ExtResource("2_vqe3p")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncgj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6vw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhie1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cets7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtcl6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 9.0
+}]
+
+[resource]
+script = ExtResource("1_bmnlo")
+name = "Todd"
+sprite_frames = SubResource("SpriteFrames_ncgj7")
+health = 68
+damage = 25
+cost = 200
+type = "FIRE"
+preferred_enemy = "EARTH"
+fire_damage_modifier = 0.9
+water_damage_modifier = 0.4
+earth_damage_modifier = 1.2
+grass_damage_modifier = 1.1

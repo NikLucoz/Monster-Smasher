@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://cxdf88bxt7t7q"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_alsbc"]
+[ext_resource type="Texture2D" uid="uid://c07fi05k2c2nx" path="res://Creatures/Alejandro/Alejandro_spritesheet.png" id="2_ws4ie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxpen"]
+atlas = ExtResource("2_ws4ie")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yue1m"]
+atlas = ExtResource("2_ws4ie")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh5r0"]
+atlas = ExtResource("2_ws4ie")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mnao"]
+atlas = ExtResource("2_ws4ie")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5whs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxpen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yue1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh5r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mnao")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_alsbc")
+name = "Alejandro"
+sprite_frames = SubResource("SpriteFrames_n5whs")
+health = 65
+damage = 12
+cost = 100
+type = "WATER"
+preferred_enemy = "WATER"
+fire_damage_modifier = 1.0
+water_damage_modifier = 1.4
+earth_damage_modifier = -0.4
+grass_damage_modifier = 0.6

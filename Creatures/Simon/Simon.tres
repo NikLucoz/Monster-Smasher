@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://br6qkxj8mvp56"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_76glk"]
+[ext_resource type="Texture2D" uid="uid://dqso1xenuomw8" path="res://Creatures/Simon/Simon_spritesheet.png" id="2_4ymqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7mfi"]
+atlas = ExtResource("2_4ymqt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7il28"]
+atlas = ExtResource("2_4ymqt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88mdi"]
+atlas = ExtResource("2_4ymqt")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we7le"]
+atlas = ExtResource("2_4ymqt")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmo07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7mfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7il28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88mdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we7le")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_76glk")
+name = "Simon"
+sprite_frames = SubResource("SpriteFrames_bmo07")
+health = 60
+damage = 20
+cost = 100
+type = "WATER"
+preferred_enemy = "FIRE"
+fire_damage_modifier = 1.7
+water_damage_modifier = 0.8
+earth_damage_modifier = 1.0
+grass_damage_modifier = -0.5

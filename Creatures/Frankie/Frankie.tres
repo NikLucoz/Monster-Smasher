@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=3 format=3 uid="uid://bs5vtlhstd7pg"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_e2c75"]
+[ext_resource type="SpriteFrames" uid="uid://cgvvswf0lmujv" path="res://Creatures/Frankie/Frankie_spriteframes.tres" id="2_11gka"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_e2c75")
+name = "Frankie"
+sprite_frames = ExtResource("2_11gka")
+health = 80
+damage = 20
+cost = 100
+type = "FIRE"
+preferred_enemy = "GRASS"
+fire_damage_modifier = 0.23
+water_damage_modifier = 2.0
+earth_damage_modifier = 0.7
+grass_damage_modifier = 1.5

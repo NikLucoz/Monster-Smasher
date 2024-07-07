@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MonsterSmasher"
+config/version="0.1"
+run/main_scene="res://Scenes/Game/squad_menu.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Assets/Icons/icon.svg"
+
+[autoload]
+
+TurnManager="*res://Scenes/Objects/turn_manager.tscn"
+GameManager="*res://Scenes/Objects/game_manager.tscn"
+MusicLoop="*res://Scenes/music_loop.tscn"
+
+[display]
+
+window/size/viewport_width=844
+window/size/viewport_height=390
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.392157, 0.509804, 0.733333, 1)

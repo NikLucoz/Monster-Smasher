@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://c66cqog5mjqtq"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_f8wif"]
+[ext_resource type="Texture2D" uid="uid://dbcfrfsd2iux2" path="res://Creatures/Jude/Jude_spritesheet.png" id="2_yhywv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obo4w"]
+atlas = ExtResource("2_yhywv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m1du"]
+atlas = ExtResource("2_yhywv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4v7"]
+atlas = ExtResource("2_yhywv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rntr2"]
+atlas = ExtResource("2_yhywv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mya0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obo4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m1du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rntr2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[resource]
+script = ExtResource("1_f8wif")
+name = "Jude"
+sprite_frames = SubResource("SpriteFrames_mya0f")
+health = 20
+damage = 30
+cost = 120
+type = "GRASS"
+preferred_enemy = "EARTH"
+fire_damage_modifier = 0.23
+water_damage_modifier = 0.6
+earth_damage_modifier = 1.0
+grass_damage_modifier = 0.9

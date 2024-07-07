@@ -1,0 +1,29 @@
+[gd_scene load_steps=23 format=3 uid="uid://idh8tetdhqcq"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_8byxp"]
+[ext_resource type="Resource" uid="uid://ctwfjfdfasmqp" path="res://Creatures/Alis/Alis.tres" id="2_61m1v"]
+[ext_resource type="Resource" uid="uid://cbhk0bihi3yvq" path="res://Creatures/Aron/Aron.tres" id="2_vhk2w"]
+[ext_resource type="Resource" uid="uid://dtctkhr0d1eqf" path="res://Creatures/Brob/Brob.tres" id="3_twu7u"]
+[ext_resource type="Resource" uid="uid://bs5vtlhstd7pg" path="res://Creatures/Frankie/Frankie.tres" id="4_k0ke1"]
+[ext_resource type="Resource" uid="uid://bhi0f266v7o3s" path="res://Creatures/Jared/Jared.tres" id="5_3i72w"]
+[ext_resource type="Resource" uid="uid://dc60117alxo50" path="res://Creatures/Jasmine/jasmine.tres" id="6_lpnta"]
+[ext_resource type="Resource" uid="uid://dvpqodye1au7v" path="res://Creatures/Reginald/Reginald.tres" id="7_6wyc1"]
+[ext_resource type="Resource" uid="uid://br6qkxj8mvp56" path="res://Creatures/Simon/Simon.tres" id="8_h4g2l"]
+[ext_resource type="Resource" uid="uid://c8fq4x4wmrvoo" path="res://Creatures/Joe/Joe.tres" id="9_8vc6q"]
+[ext_resource type="Resource" uid="uid://b51h1lg8o443j" path="res://Creatures/Stefan/Stefan.tres" id="9_atbp2"]
+[ext_resource type="Resource" uid="uid://gu321x64damy" path="res://Creatures/Calvin/Calvin.tres" id="10_bbnpq"]
+[ext_resource type="Resource" uid="uid://bc17utf8cnvjn" path="res://Creatures/Todd/Todd.tres" id="13_os2lr"]
+[ext_resource type="Resource" uid="uid://buhp1jay15712" path="res://Creatures/Noah/Noah.tres" id="14_gr8p6"]
+[ext_resource type="Resource" uid="uid://c5xlq6rtvenww" path="res://Creatures/Jonathan/Jonathan.tres" id="15_mr3al"]
+[ext_resource type="Resource" uid="uid://cycbywkkh0v5t" path="res://Creatures/Joshua/Joshua.tres" id="16_m63v8"]
+[ext_resource type="Resource" uid="uid://c70jnysc2ss8v" path="res://Creatures/Arlo/Arlo.tres" id="17_f5p3j"]
+[ext_resource type="Resource" uid="uid://0me5mui5v2w8" path="res://Creatures/Brandon/Brandon.tres" id="18_mybsb"]
+[ext_resource type="Resource" uid="uid://cxdf88bxt7t7q" path="res://Creatures/Alejandro/Alejandro.tres" id="19_x6qa0"]
+[ext_resource type="Resource" uid="uid://domcs2ui24ldj" path="res://Creatures/Oliver/Oliver.tres" id="20_12enk"]
+[ext_resource type="Resource" uid="uid://ch4gxh1llciyi" path="res://Creatures/Dylan/Dylan.tres" id="21_wrc3u"]
+[ext_resource type="Resource" uid="uid://c66cqog5mjqtq" path="res://Creatures/Jude/Jude.tres" id="22_rvsc0"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_8byxp")
+all_monsters = Array[Resource("res://Scripts/Monsters/MonsterResource.gd")]([ExtResource("2_61m1v"), ExtResource("2_vhk2w"), ExtResource("3_twu7u"), ExtResource("10_bbnpq"), ExtResource("4_k0ke1"), ExtResource("5_3i72w"), ExtResource("6_lpnta"), ExtResource("9_8vc6q"), ExtResource("7_6wyc1"), ExtResource("8_h4g2l"), ExtResource("9_atbp2"), ExtResource("13_os2lr"), ExtResource("14_gr8p6"), ExtResource("15_mr3al"), ExtResource("16_m63v8"), ExtResource("17_f5p3j"), ExtResource("18_mybsb"), ExtResource("19_x6qa0"), ExtResource("20_12enk"), ExtResource("21_wrc3u"), ExtResource("22_rvsc0")])
+player_monster_collection = Array[Resource("res://Scripts/Monsters/MonsterResource.gd")]([ExtResource("5_3i72w")])

@@ -1,0 +1,338 @@
+[gd_scene load_steps=23 format=3 uid="uid://bfquofuhiu411"]
+
+[ext_resource type="Script" path="res://Scripts/BattleManager.gd" id="1_5ctl8"]
+[ext_resource type="PackedScene" uid="uid://c3idsj77kmk8h" path="res://Scenes/auto_scroller.tscn" id="2_ybayq"]
+[ext_resource type="Script" path="res://Scripts/Monsters/Squad.gd" id="4_ugq1a"]
+[ext_resource type="Texture2D" uid="uid://38g1l5yavhw" path="res://Assets/Tiles/tileset-sliced.png" id="6_n6rt3"]
+[ext_resource type="Texture2D" uid="uid://c2xl03oovgmne" path="res://Assets/Icons/magnifying-glass.svg" id="8_2xnr3"]
+[ext_resource type="Theme" uid="uid://di8fjvbro6ikl" path="res://Assets/Theme.tres" id="8_a8lsx"]
+[ext_resource type="FontFile" uid="uid://o0hbkp144ux0" path="res://Assets/Fonts/m6x11.ttf" id="9_p5o0y"]
+[ext_resource type="Texture2D" uid="uid://dep6c11d0gvc1" path="res://Assets/Icons/attack_button_icon.svg" id="10_g0tf8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p74pj"]
+texture = ExtResource("6_n6rt3")
+texture_region_size = Vector2i(32, 32)
+10:0/0 = 0
+11:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ln203"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_p74pj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn65v"]
+bg_color = Color(0.628906, 0.402893, 0.593592, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djfgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpavg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnyf4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jetyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi11c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1wgc"]
+bg_color = Color(0.628906, 0.402893, 0.593592, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n05p0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ih8b6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mfiv"]
+bg_color = Color(0.737255, 0.32549, 0.541176, 0.458824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3peu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnd83"]
+
+[node name="BattleManager" type="Node"]
+script = ExtResource("1_5ctl8")
+
+[node name="AutoScroller" parent="." instance=ExtResource("2_ybayq")]
+visible = false
+position = Vector2(-143, -161)
+scale = Vector2(0.9, 0.9)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ln203")
+rendering_quadrant_size = 18
+format = 2
+layer_0/tile_data = PackedInt32Array(65531, 131073, 2, 65532, 196609, 2, 131067, 458753, 4, 131068, 458753, 4, 65533, 131073, 2, 65534, 196609, 2, 131069, 458753, 4, 131070, 458753, 4, 65535, 131073, 2, 0, 196609, 2, 131071, 458753, 4, 65536, 458753, 4, 1, 131073, 2, 2, 196609, 2, 65537, 458753, 4, 65538, 458753, 4, 3, 131073, 2, 65539, 458753, 4, -4, 524289, 2, -3, 131073, 1, -2, 196609, 1, -1, 458753, 2, -65536, 196609, 1, -65535, 131073, 1, -65534, 196609, 1, -65533, 524289, 2, -5, 196609, 1, -65540, 524289, 2, -131076, 458753, 1, 4, 196609, 2, -65532, 196609, 1, -131069, 458753, 2, -196605, 458753, 1, -65537, 458753, 1, 65540, 458753, 4)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.381
+anchor_top = 0.345
+anchor_right = 0.714
+anchor_bottom = 0.683
+offset_left = -463.0
+offset_top = -251.0
+offset_right = -463.0
+offset_bottom = -251.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 5.0
+offset_right = 280.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gn65v")
+
+[node name="SkipTurnButton" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme = ExtResource("8_a8lsx")
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 7.43601
+offset_top = 4.45
+offset_right = 68.436
+offset_bottom = 18.45
+theme_override_fonts/font = ExtResource("9_p5o0y")
+theme_override_font_sizes/font_size = 16
+text = "Skip turn"
+
+[node name="AttackMonsterButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368032
+anchor_top = 0.875815
+anchor_right = 0.368032
+anchor_bottom = 0.875815
+offset_left = 80.0
+offset_top = -50.0
+offset_right = 99.0
+offset_bottom = -28.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_djfgl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hpavg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qnyf4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jetyf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bi11c")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackButtonIcon" type="Sprite2D" parent="Control/AttackMonsterButton"]
+position = Vector2(10, 9.99999)
+scale = Vector2(0.0410156, 0.0410156)
+texture = ExtResource("10_g0tf8")
+
+[node name="AttackMonsterButton2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368032
+anchor_top = 0.875815
+anchor_right = 0.368032
+anchor_bottom = 0.875815
+offset_left = 114.0
+offset_top = -50.0
+offset_right = 133.0
+offset_bottom = -28.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_djfgl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hpavg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qnyf4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jetyf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bi11c")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackButtonIcon2" type="Sprite2D" parent="Control/AttackMonsterButton2"]
+position = Vector2(10, 10)
+scale = Vector2(0.0410156, 0.0410156)
+texture = ExtResource("10_g0tf8")
+
+[node name="AttackMonsterButton3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368032
+anchor_top = 0.875815
+anchor_right = 0.368032
+anchor_bottom = 0.875815
+offset_left = 150.0
+offset_top = -50.0
+offset_right = 169.0
+offset_bottom = -28.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_djfgl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hpavg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qnyf4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jetyf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bi11c")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackButtonIcon3" type="Sprite2D" parent="Control/AttackMonsterButton3"]
+position = Vector2(10, 10)
+scale = Vector2(0.0410156, 0.0410156)
+texture = ExtResource("10_g0tf8")
+
+[node name="InfoButton" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.742
+anchor_top = 0.031
+anchor_right = 0.986
+anchor_bottom = 0.195
+offset_left = -21.1046
+offset_top = 1.36358
+offset_right = -69.6812
+offset_bottom = -0.254906
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1wgc")
+
+[node name="InfoButton" type="Button" parent="Control/InfoButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n05p0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ih8b6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mfiv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v3peu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fnd83")
+
+[node name="TextureRect" type="TextureRect" parent="Control/InfoButton/InfoButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.375
+anchor_right = 0.714
+anchor_bottom = 0.75
+offset_left = -11.42
+offset_top = -12.5
+offset_right = -4.28
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("8_2xnr3")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -49)
+zoom = Vector2(3, 3)
+
+[node name="PlayerSquad" type="Node" parent="." node_paths=PackedStringArray("spawnPoints")]
+script = ExtResource("4_ugq1a")
+spawnPoints = [NodePath("Spawnpoint1"), NodePath("Spawnpoint2"), NodePath("Spawnpoint3")]
+
+[node name="Spawnpoint1" type="Node2D" parent="PlayerSquad"]
+position = Vector2(-32, -10)
+
+[node name="Spawnpoint2" type="Node2D" parent="PlayerSquad"]
+position = Vector2(-76, -10)
+
+[node name="Spawnpoint3" type="Node2D" parent="PlayerSquad"]
+position = Vector2(-118, -10)
+
+[node name="Control" type="Control" parent="PlayerSquad"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PlayerSquad/Control"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -75.0
+offset_right = -96.0
+offset_bottom = -35.0
+
+[node name="Panel2" type="Panel" parent="PlayerSquad/Control"]
+layout_mode = 0
+offset_left = -94.0
+offset_top = -75.0
+offset_right = -54.0
+offset_bottom = -35.0
+
+[node name="Panel3" type="Panel" parent="PlayerSquad/Control"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = -75.0
+offset_right = -12.0
+offset_bottom = -35.0
+
+[node name="EnemySquad" type="Node" parent="." node_paths=PackedStringArray("spawnPoints")]
+script = ExtResource("4_ugq1a")
+spawnPoints = [NodePath("Spawnpoint1"), NodePath("Spawnpoint2"), NodePath("Spawnpoint3")]
+isEnemySquad = true
+
+[node name="Spawnpoint1" type="Node2D" parent="EnemySquad"]
+position = Vector2(51, -10)
+
+[node name="Spawnpoint2" type="Node2D" parent="EnemySquad"]
+position = Vector2(87, -10)
+
+[node name="Spawnpoint3" type="Node2D" parent="EnemySquad"]
+position = Vector2(123, -10)
+
+[connection signal="pressed" from="Control/Panel/SkipTurnButton" to="." method="_on_skip_turn_button_pressed"]
+[connection signal="pressed" from="Control/AttackMonsterButton" to="." method="_on_attack_monster_button_pressed"]
+[connection signal="pressed" from="Control/AttackMonsterButton2" to="." method="_on_attack_monster_button_2_pressed"]
+[connection signal="pressed" from="Control/AttackMonsterButton3" to="." method="_on_attack_monster_button_3_pressed"]
+[connection signal="pressed" from="Control/InfoButton/InfoButton" to="." method="_on_info_button_pressed"]

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://gu321x64damy"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_p3nxk"]
+[ext_resource type="Texture2D" uid="uid://kih2y2dhtjad" path="res://Creatures/Calvin/Calvin_spritesheet.png" id="2_l0gqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4tf2"]
+atlas = ExtResource("2_l0gqd")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cssg"]
+atlas = ExtResource("2_l0gqd")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ur2"]
+atlas = ExtResource("2_l0gqd")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5guy"]
+atlas = ExtResource("2_l0gqd")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_se58c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4tf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cssg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ur2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5guy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_p3nxk")
+name = "Calvin"
+sprite_frames = SubResource("SpriteFrames_se58c")
+health = 60
+damage = 30
+cost = 200
+type = "FIRE"
+preferred_enemy = "GRASS"
+fire_damage_modifier = 0.5
+water_damage_modifier = 0.4
+earth_damage_modifier = 1.0
+grass_damage_modifier = 1.6

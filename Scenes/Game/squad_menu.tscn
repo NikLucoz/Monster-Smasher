@@ -1,0 +1,254 @@
+[gd_scene load_steps=20 format=3 uid="uid://coiu8jh13se3y"]
+
+[ext_resource type="FontFile" uid="uid://o0hbkp144ux0" path="res://Assets/Fonts/m6x11.ttf" id="1_8fw5a"]
+[ext_resource type="Script" path="res://Scripts/squad_menu.gd" id="1_hi5oi"]
+[ext_resource type="Texture2D" uid="uid://cw8sfosvjglur" path="res://Assets/Default_pixel_art_basement_for_monsters_dark_3.jpg" id="2_a1dxk"]
+[ext_resource type="Texture2D" uid="uid://dep6c11d0gvc1" path="res://Assets/Icons/attack_button_icon.svg" id="9_cyxmd"]
+[ext_resource type="Texture2D" uid="uid://c2xl03oovgmne" path="res://Assets/Icons/magnifying-glass.svg" id="10_nc2cr"]
+[ext_resource type="Texture2D" uid="uid://cvbhtafnss6q6" path="res://Assets/Icons/price-tag.svg" id="12_6be73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tlp6"]
+bg_color = Color(0.188235, 0.219608, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxo41"]
+bg_color = Color(0.628906, 0.402893, 0.593592, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_236b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3ri8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl8sw"]
+bg_color = Color(0.737255, 0.32549, 0.541176, 0.458824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nboxu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlrph"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w2aj"]
+bg_color = Color(0.628906, 0.402893, 0.593592, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ak4to"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5uiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkr22"]
+bg_color = Color(0.737255, 0.32549, 0.541176, 0.458824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4dxf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a032x"]
+
+[node name="SquadMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hi5oi")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tlp6")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -42.0
+offset_right = 849.0
+offset_bottom = 439.0
+texture = ExtResource("2_a1dxk")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 72.0
+offset_right = 709.0
+offset_bottom = 389.0
+horizontal_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Panel/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 331.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_8fw5a")
+theme_override_font_sizes/font_size = 48
+text = "My monsters"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.742
+anchor_top = 0.031
+anchor_right = 0.986
+anchor_bottom = 0.195
+offset_left = 108.752
+offset_top = 299.91
+offset_right = -27.1841
+offset_bottom = 299.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_wxo41")
+
+[node name="ExitButton" type="Button" parent="Panel/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_236b7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p3ri8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jl8sw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nboxu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nlrph")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ExitButton/ExitButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.375
+anchor_right = 0.714
+anchor_bottom = 0.75
+offset_left = -14.97
+offset_top = -16.0
+offset_right = 10.02
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cyxmd")
+expand_mode = 1
+
+[node name="InfoButton" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.742
+anchor_top = 0.031
+anchor_right = 0.986
+anchor_bottom = 0.195
+offset_left = 108.752
+offset_top = 220.91
+offset_right = -27.184
+offset_bottom = 220.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w2aj")
+
+[node name="InfoButton" type="Button" parent="Panel/InfoButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak4to")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f5uiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gkr22")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h4dxf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a032x")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/InfoButton/InfoButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.375
+anchor_right = 0.714
+anchor_bottom = 0.75
+offset_left = -28.97
+offset_top = -29.0
+offset_right = -14.98
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("10_nc2cr")
+expand_mode = 1
+
+[node name="ShopButton" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.742
+anchor_top = 0.031
+anchor_right = 0.986
+anchor_bottom = 0.195
+offset_left = 108.752
+offset_top = 139.91
+offset_right = -27.184
+offset_bottom = 139.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w2aj")
+
+[node name="ShopButton" type="Button" parent="Panel/ShopButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak4to")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f5uiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gkr22")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h4dxf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a032x")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ShopButton/ShopButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.375
+anchor_right = 0.714
+anchor_bottom = 0.75
+offset_left = -28.97
+offset_top = -29.0
+offset_right = -14.98
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("12_6be73")
+expand_mode = 1
+
+[connection signal="pressed" from="Panel/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/InfoButton/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="Panel/ShopButton/ShopButton" to="." method="_on_shop_button_pressed"]

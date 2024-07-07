@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://7k3qqhordqj7"]
+
+[ext_resource type="Script" path="res://Scripts/battle_finished_menu.gd" id="1_78u6e"]
+[ext_resource type="PackedScene" uid="uid://c3idsj77kmk8h" path="res://Scenes/auto_scroller.tscn" id="2_rg4k0"]
+[ext_resource type="FontFile" uid="uid://c4notrgyfbpjp" path="res://Assets/Fonts/Crang.ttf" id="3_rrf4u"]
+[ext_resource type="FontFile" uid="uid://o0hbkp144ux0" path="res://Assets/Fonts/m6x11.ttf" id="4_u0mbb"]
+[ext_resource type="Texture2D" uid="uid://c42vj5hfvn57j" path="res://Assets/Icons/two-coins.svg" id="5_kyrff"]
+[ext_resource type="Theme" uid="uid://di8fjvbro6ikl" path="res://Assets/Theme.tres" id="6_dj144"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgobl"]
+bg_color = Color(0.628906, 0.402893, 0.593592, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[node name="BattleFinished" type="Node"]
+script = ExtResource("1_78u6e")
+
+[node name="AutoScroller" parent="." instance=ExtResource("2_rg4k0")]
+position = Vector2(-40, -28)
+scale = Vector2(2.91718, 2.91718)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 42.0
+offset_right = 790.0
+offset_bottom = 288.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_rrf4u")
+theme_override_font_sizes/font_size = 126
+text = "You lose!"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 209.0
+offset_right = 590.0
+offset_bottom = 265.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_u0mbb")
+theme_override_font_sizes/font_size = 64
+text = "+30 added"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 243.0
+offset_top = 180.0
+offset_right = 330.0
+offset_bottom = 267.0
+texture = ExtResource("5_kyrff")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 318.0
+offset_top = 295.0
+offset_right = 534.0
+offset_bottom = 357.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bgobl")
+
+[node name="SkipTurnButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+theme = ExtResource("6_dj144")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 206.0
+offset_bottom = 62.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_rrf4u")
+theme_override_font_sizes/font_size = 32
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/SkipTurnButton" to="." method="_on_skip_turn_button_pressed"]

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://ch4gxh1llciyi"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_gdjwl"]
+[ext_resource type="Texture2D" uid="uid://bkomsjdbq4hem" path="res://Creatures/Dylan/Dylan_spritesheet.png" id="2_a4gk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i05bx"]
+atlas = ExtResource("2_a4gk5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6om4"]
+atlas = ExtResource("2_a4gk5")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ewnk"]
+atlas = ExtResource("2_a4gk5")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkigp"]
+atlas = ExtResource("2_a4gk5")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wrkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i05bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6om4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ewnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkigp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_gdjwl")
+name = "Dylan"
+sprite_frames = SubResource("SpriteFrames_8wrkf")
+health = 200
+damage = 6
+cost = 90
+type = "GRASS"
+preferred_enemy = "EARTH"
+fire_damage_modifier = 0.9
+water_damage_modifier = 1.0
+earth_damage_modifier = 1.0
+grass_damage_modifier = 1.0

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://vde0utsxe0dn"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/Monster.gd" id="1_x7vew"]
+[ext_resource type="SpriteFrames" uid="uid://cgvvswf0lmujv" path="res://Creatures/Frankie/Frankie_spriteframes.tres" id="2_vdr5t"]
+[ext_resource type="Texture2D" uid="uid://cjw43qpvb4xep" path="res://Assets/Icons/select.svg" id="3_luyl4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehdha"]
+bg_color = Color(0.925896, 0, 0.21912, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s06x5"]
+bg_color = Color(0.230039, 0.542685, 3.85046e-07, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af0l0"]
+size = Vector2(20, 22)
+
+[node name="Monster" type="CharacterBody2D"]
+script = ExtResource("1_x7vew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Monster"]]
+sprite_frames = ExtResource("2_vdr5t")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -14.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ehdha")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s06x5")
+show_percentage = false
+
+[node name="PlayerIndicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.19209e-07, 2)
+scale = Vector2(0.115198, 0.115198)
+texture = ExtResource("3_luyl4")
+region_rect = Rect2(20, 20, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_af0l0")
+disabled = true

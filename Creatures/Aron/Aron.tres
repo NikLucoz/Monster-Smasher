@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://cbhk0bihi3yvq"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_nrhy7"]
+[ext_resource type="Texture2D" uid="uid://0ylsd1clhscn" path="res://Creatures/Aron/Aron_spritesheet.png" id="2_5jq34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doeo6"]
+atlas = ExtResource("2_5jq34")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpeye"]
+atlas = ExtResource("2_5jq34")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvia8"]
+atlas = ExtResource("2_5jq34")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgd6u"]
+atlas = ExtResource("2_5jq34")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s45cc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doeo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpeye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvia8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgd6u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_nrhy7")
+name = "Aron"
+sprite_frames = SubResource("SpriteFrames_s45cc")
+health = 45
+damage = 22
+cost = 100
+type = "GRASS"
+preferred_enemy = "GRASS"
+fire_damage_modifier = 0.5
+water_damage_modifier = 0.6
+earth_damage_modifier = 0.9
+grass_damage_modifier = 1.2

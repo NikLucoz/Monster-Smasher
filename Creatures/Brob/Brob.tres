@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://dtctkhr0d1eqf"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_4s605"]
+[ext_resource type="Texture2D" uid="uid://cm5mmr5v32a7u" path="res://Creatures/Brob/Brob.png" id="2_mf5uf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66yi3"]
+atlas = ExtResource("2_mf5uf")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eomc7"]
+atlas = ExtResource("2_mf5uf")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21cjj"]
+atlas = ExtResource("2_mf5uf")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sdsx"]
+atlas = ExtResource("2_mf5uf")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjrok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66yi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eomc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21cjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sdsx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_4s605")
+name = "Brob"
+sprite_frames = SubResource("SpriteFrames_rjrok")
+health = 150
+damage = 8
+cost = 100
+type = "EARTH"
+preferred_enemy = "GRASS"
+fire_damage_modifier = 0.5
+water_damage_modifier = 1.0
+earth_damage_modifier = 0.23
+grass_damage_modifier = 1.8

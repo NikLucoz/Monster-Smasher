@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://c70jnysc2ss8v"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_ugdon"]
+[ext_resource type="Texture2D" uid="uid://jwpw4ottphh" path="res://Creatures/Arlo/Arlo_spritesheet.png" id="2_xagsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i84ox"]
+atlas = ExtResource("2_xagsn")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt3wc"]
+atlas = ExtResource("2_xagsn")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pulx3"]
+atlas = ExtResource("2_xagsn")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisfu"]
+atlas = ExtResource("2_xagsn")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tulx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i84ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pulx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fisfu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_ugdon")
+name = "Arlo"
+sprite_frames = SubResource("SpriteFrames_tulx5")
+health = 48
+damage = 14
+cost = 75
+type = "GRASS"
+preferred_enemy = "EARTH"
+fire_damage_modifier = 0.4
+water_damage_modifier = 0.9
+earth_damage_modifier = 1.5
+grass_damage_modifier = 1.0

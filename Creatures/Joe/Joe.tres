@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="MonsterResource" load_steps=8 format=3 uid="uid://c8fq4x4wmrvoo"]
+
+[ext_resource type="Script" path="res://Scripts/Monsters/MonsterResource.gd" id="1_xdcma"]
+[ext_resource type="Texture2D" uid="uid://bikfbqwb4mcio" path="res://Creatures/Joe/Joe_spritesheet.png" id="2_6qmmt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6uy4"]
+atlas = ExtResource("2_6qmmt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikjok"]
+atlas = ExtResource("2_6qmmt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkb3n"]
+atlas = ExtResource("2_6qmmt")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1xan"]
+atlas = ExtResource("2_6qmmt")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2mgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6uy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikjok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkb3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1xan")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("1_xdcma")
+name = "Joe"
+sprite_frames = SubResource("SpriteFrames_k2mgo")
+health = 75
+damage = 19
+cost = 130
+type = "GRASS"
+preferred_enemy = "FIRE"
+fire_damage_modifier = 1.2
+water_damage_modifier = 0.8
+earth_damage_modifier = 1.0
+grass_damage_modifier = 0.5
